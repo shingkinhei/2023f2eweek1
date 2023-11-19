@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: MantouSans;
+  src: url(./assets/MantouSans-Regular.ttf);
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  box-sizing: border-box;
+  color: #334155;
+}
+
+/* color setting */
+.gradient-color {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gradient-color-front to-gradient-color-back
+}
+
+.gradient-background {
+  @apply bg-gradient-to-r from-gradient-color-front to-gradient-color-back
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+/*font-setting*/
+.mantouSans {
+  font-family: MantouSans;
+}
+
+/* button setting */
+button  {
+  @apply p-5 rounded-full font-semibold text-base flex items-center gap-2;
+  background-color: #F1F5F9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+a {
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--main-color);
+}
+
+body {
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  /* min-height: 100vh; */
+}
+
+h1 {
+  font-size: 7rem;
+  line-height: 1.1;
+  @apply mantouSans ;
+}
+
+h2 {
+  @apply mantouSans text-6xl;
+}
+
+/* banner */
+.banner-wrapper{
+  @apply w-full h-screen relative;
+}
+
+.banner-person{
+  position: absolute;
+  object-fit: contain;
+  bottom: 0;
+  height: 500px;
+  left:50%;
+  z-index: 2;
+  transform: translate(-50%,0%)
+}
+
+.banner-cloud {
+  position: absolute;
+  object-fit: contain;
+  bottom: 0;
+  width: 800px;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, 0%)
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-person {
+    height: 350px;
+  }
+  .banner-cloud {
+    max-width: 630px;
+  }
+}
+
+.marquee-text{
+  @apply mantouSans;
+  font-size: 5rem;
+  margin-left: 3rem;
+}
+
+.section-tab {
+  @apply bg-text-primary rounded-lg py-2 px-4 text-center text-xl font-semibold text-white inline-block;
+}
+
+/* advocate */
+.advocate-wrapper {
+  @apply bg-bg-color-theme-2 flex w-full items-center justify-center box-border p-5 lg:py-20;
+}
+
+.advocate-content {
+  @apply flex mx-auto max-w-7xl py-6 sm:px-6 lg:px-8 flex-col lg:flex-row;
+}
+
+
+.advocate-wrapper {
+  background-color: #F7ECE1;
+}
+
+/* policy-issue */
+.policy-issue-wrapper{
+  @apply w-full flex flex-col items-center py-24;
+}
+
+
+/* slogan */
+.slogan-wrapper{
+ @apply py-20 flex flex-col items-center;
+}
+
+.name-tag {
+  @apply p-6 bg-white rounded-3xl flex items-center gap-2 shadow-lg;
+}
+.name-number {
+  @apply flex items-center justify-center h-16 w-16 rounded-full gradient-background;
+}
+.name-number span{
+  @apply text-white font-bold text-4xl lg:text-2xl;
+}
+
+.name-text  {
+  @apply text-3xl font-bold text-primary-color lg:text-5xl;
+}
+
+/* footer */
+.footer-wrapper{
+  @apply bg-bg-color-theme-3 p-8 lg:py-20 lg:p-0 flex items-center justify-center;
+}
+
+.footer-container{
+  @apply flex gap-5 w-full lg:w-4/5 justify-between flex-col lg:flex-row;
+}
+;
+.footer-content {
+  @apply flex-col flex-1 gap-2;
+}
+
+/* donate-modal */
+
+.donate-image{
+  max-height: 200px;
+}
